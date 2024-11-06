@@ -31,11 +31,10 @@ namespace Julius_Caesar_Encryption
                         DecryptWithoutKey();
                         break;
                     default:
-                        Console.WriteLine();
+                        Console.WriteLine("Invalid choice. You are a bad person");
                         continue;
                 }
             }
-
         }
 
         public static int[] StringToInt(string userString)
@@ -87,8 +86,6 @@ namespace Julius_Caesar_Encryption
             string decryptedString = new string(decryptedCharArray);
             
             Console.WriteLine($"Decrypted message: {decryptedString}");
-
-
         }
 
         public static void DecryptWithoutKey()
@@ -98,19 +95,18 @@ namespace Julius_Caesar_Encryption
 
             int[] intArray = StringToInt(userMessage);
 
-
             for (int key = 1; key <= 27; key++)
             {
-                int[] intArrayCopy = intArray;
+                int[] intArrayCopy = (int[])intArray.Clone();
                 
                 for (int j = 0; j < intArrayCopy.Length; j++)
                 {
-                    intArray[j] = intArray[j] - key;
+                    intArrayCopy[j] = intArrayCopy[j] - key;
                 }
-                char[] decryptedCharArray = Array.ConvertAll(intArray, x => (char)x);
+                char[] decryptedCharArray = Array.ConvertAll(intArrayCopy, x => (char)x);
                 string decryptedString = new string(decryptedCharArray);
                 
-                Console.WriteLine($"Decrypted message: {decryptedString}");
+                Console.WriteLine($"Key {key}: {decryptedString}");
             }     
         }
     }
