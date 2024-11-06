@@ -52,7 +52,7 @@ namespace Julius_Caesar_Encryption
         {
             Console.WriteLine("Enter message to encrypt:");
             string userMessage = Console.ReadLine().ToUpper();
-            Console.WriteLine("Enter encryption key (number 1 - 27): ");
+            Console.WriteLine("Enter encryption key (number 1 - 26): ");
             int encryptionKey = Convert.ToInt32(Console.ReadLine());
 
             int[] intArray = StringToInt(userMessage);
@@ -72,7 +72,7 @@ namespace Julius_Caesar_Encryption
         {
             Console.WriteLine("Enter message to decrypt:");
             string userMessage = Console.ReadLine().ToUpper();
-            Console.WriteLine("Enter encryption key (number 1 - 27): ");
+            Console.WriteLine("Enter encryption key (number 1 - 26): ");
             int encryptionKey = Convert.ToInt32(Console.ReadLine());
 
             int[] intArray = StringToInt(userMessage);
@@ -95,7 +95,7 @@ namespace Julius_Caesar_Encryption
 
             int[] intArray = StringToInt(userMessage);
 
-            for (int key = 1; key <= 27; key++)
+            for (int key = 1; key <= 26; key++)
             {
                 int[] intArrayCopy = (int[])intArray.Clone();
                 
