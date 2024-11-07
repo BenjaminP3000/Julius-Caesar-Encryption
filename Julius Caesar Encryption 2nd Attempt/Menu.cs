@@ -16,6 +16,7 @@ namespace Julius_Caesar_Encryption_2nd_Attempt
                 Console.WriteLine("1. Kryptera meddelande");
                 Console.WriteLine("2. Dekryptera meddelande");
                 Console.WriteLine("3. Dekryptera meddelande utan nyckel");
+                Console.WriteLine("4. Avsluta");
 
                 string menuChoice = Console.ReadLine();
 
@@ -26,15 +27,18 @@ namespace Julius_Caesar_Encryption_2nd_Attempt
                         break;
 
                     case "2":
-                        // Kod för dekryptering
+                        Decryption.DecryptMessage();
                         break;
 
                     case "3":
-                        // Kod för dekryptering utan nyckel
+                        Decryption.DecryptMessageWithoutKey();
                         break;
 
+                    case "4":
+                        return;
+
                     default:
-                        // Kod för fel val
+                        Console.WriteLine("Du är en imbecill");
                         continue;
 
                 }
