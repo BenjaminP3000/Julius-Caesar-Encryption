@@ -15,14 +15,16 @@ namespace Julius_Caesar_Encryption_2nd_Attempt
             Console.Write("Ange krypteringsnyckel (siffra 1-26): ");
             int encryptionKey = Convert.ToInt32(Console.ReadLine());
 
-            var charArray = new char[userMessage.Length];
+            var intArray = new int[userMessage.Length];
 
             for (int i = 0; i < userMessage.Length; i++)
             {
-                charArray[i] = userMessage[i];
+                intArray[i] = (int)Char.GetNumericValue(userMessage, i);
+                if (intArray[i] >= 65 && intArray[i] >= 90)
+                {
+                    intArray[i] += encryptionKey;
+                }
             }
-
-
         }
     }
 }
